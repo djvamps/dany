@@ -1,0 +1,51 @@
+---
+import { HeroSlider1, HeroSlider2, HeroSlider3 } from "@static/images";
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+---
+
+<Layout
+  title="Dalopeza | Webdeveloper & Designer"
+  description="YOUR META DESCRIPTION FOR SEO"
+>
+  <main class="page-content">
+    <Hero
+      client:load
+      heroType="fullPageSlider"
+      data={[
+        {
+          subtitle: "Webdeveloper & Designer",
+          title: "Dalo",
+          background: HeroSlider1.src,
+          paragraph:
+            "Soy desarrollador web y diseñador gráfico, con 12 años de experiencia mi trabajo es conceptual basado en el logo, slogan y colores de su marca, para realizarlo uso suit adobe, html5, framework, php, mysql, css, js, jquery, software libre(cms, e-commerce), react, node.js, mongoDB, flutter, npm.",
+          button: {
+            text: "Portafolio",
+            link: "/portafolio",
+          },
+        },
+        {
+          subtitle: "Front-end / Back-end",
+          title: "Soluciones",
+          background: HeroSlider3.src,
+          paragraph: "",
+          button: {
+            text: "Echa un vistazo",
+            link: "/infinite",
+          },
+        },
+        {
+          subtitle: "Ux / Ui",
+          title: "Designer",
+          background: HeroSlider2.src,
+          paragraph:
+            "Desde 2007 resuelvo los problemas comerciales de los clientes a través del diseño. Armaré un equipo para tu proyecto, presupuesto y plazos. Ven por una interfaz, sitio web, presentación, vídeo o identidad.",
+          button: {
+            text: "Get pro version",
+            link: "/",
+          },
+        },
+      ]}
+    />
+  </main>
+</Layout>

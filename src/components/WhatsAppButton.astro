@@ -1,0 +1,39 @@
+---
+// src/components/WhatsAppButton.astro
+const whatsappNumber = "+51992870423"; // Reemplaza con tu número de WhatsApp
+const message = "Hola, estoy interesado en tus servicios."; // Mensaje predeterminado
+---
+
+<style>
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #128c7e;
+  }
+</style>
+
+<a
+  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
+  class="whatsapp-button"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>

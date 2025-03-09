@@ -6,9 +6,9 @@ import { Header } from "@modules/Header";
 import MetaConfig from "./MetaConfig.astro";
 
 interface Props {
-    title: string;
-    description: string;
-    overwritePreview?: string;
+  title: string;
+  description: string;
+  overwritePreview?: string;
 }
 
 const { title, description, overwritePreview } = Astro.props;
@@ -16,26 +16,31 @@ const { title, description, overwritePreview } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <MetaConfig
-            title={title}
-            description={description}
-            preview={overwritePreview ? overwritePreview : PreviewPng.src}
-        />
-        <title>{title}</title>
-        <Global styles={NormalizeCSS} />
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-        <script>
-            /**
-             * Add class to transition "overflow element" on page load to make it prettier
-             */
-            document.addEventListener("DOMContentLoaded", () => {
-                document.body.classList.add("hide-overflow");
-            });
-        </script>
-    </head>
-    <body>
-        <Header client:load />
-        <slot />
-    </body>
+    <MetaConfig
+      title={title}
+      description={description}
+      preview={overwritePreview ? overwritePreview : PreviewPng.src}
+    />
+    <title>{title}</title>
+    <Global styles={NormalizeCSS} />
+
+    <script>
+      /**
+       * Add class to transition "overflow element" on page load to make it prettier
+       */
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("hide-overflow");
+      });
+    </script>
+  </head>
+  <body>
+    <Header client:load />
+    <slot />
+  </body>
 </html>
